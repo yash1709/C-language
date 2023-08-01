@@ -1,0 +1,30 @@
+/* Goto Statement In C: 
+A goto statement in C programming language provides an unconditional jump from the ‘goto’ to a labeled statement in the same function
+
+These are also called ‘Jump Statement’.
+It is used to transfer the control to a predefined label.
+It’s use is avoided since it causes confusion for the fellow programmers in understanding code.
+goto statement is preferable when we need to break multiple loops using a single statement at the same time.
+*/
+
+#include <stdio.h>
+int main()
+{
+    int x;
+    for (int i = 0; i < 5; i++)
+    {
+        printf("\nHey Guys\n\n");
+        for (int j =0 ; j < 3; j++)
+        {
+            printf("Type any No. & To Exit : Press 1\n");
+            scanf("%d", &x);
+            if (x == 1)
+            {
+                goto end;                                 // This goto will transfer the control to end: i.e. out of both loop
+            }
+        }
+    }
+end:
+    printf("\'For\' loops are skipped as you pressed 1");
+    return 0;
+}
